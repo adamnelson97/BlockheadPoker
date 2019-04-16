@@ -36,7 +36,7 @@ int Hand::getCount() {
 }
 
 Card Hand::getCard(int n) {
-    return cards[n+1];
+    return cards[n-1];
 }
 
 Hand Hand::getVisible() {
