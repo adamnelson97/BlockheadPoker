@@ -13,8 +13,7 @@
 //-----------------------------------------------------------
 // Name: Card
 //
-// Description: Contains the information for the card (name, value)
-//      and methods to retrieve that information.
+// Description: Represents a single card in a deck
 //
 // -----------------------------------------------------------
 

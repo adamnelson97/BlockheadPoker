@@ -13,8 +13,7 @@
 //-----------------------------------------------------------
 // Name: Hand
 //
-// Description: The Hand contains all of the cards in a
-//      player's possession.
+// Description: Represents a hand or partial hand of cards
 //
 // -----------------------------------------------------------
 

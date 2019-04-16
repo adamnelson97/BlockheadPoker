@@ -13,8 +13,7 @@
 //-----------------------------------------------------------
 // Name: Bet
 //
-// Description: Contains the information representing
-//      a player's bet
+// Description: Represent a single player’s single bet.
 //
 // -----------------------------------------------------------
 

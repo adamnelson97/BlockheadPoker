@@ -6,7 +6,8 @@
 //
 //  Course and Assignment:   CSCI 477, Project 2 - Phase 1
 //
-//  Description:  Contains the enum of player types for the game
+//  Description:  The type of player a specific player is (i.e. a human
+//      or a type of AI )
 //
 // =========================================================
 
