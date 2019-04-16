@@ -1,14 +1,37 @@
+//========================================================
 //
-// Created by adamn on 4/16/2019.
+//  File Name:   game.h
 //
+//  Author:  Adam Nelson
+//
+//  Course and Assignment:   CSCI 477, Project 2 - Phase 1
+//
+//  Description:  The header file for the Game class
+//
+// =========================================================
 
-#ifndef BLOCKHEADPOKER_GAME_H
-#define BLOCKHEADPOKER_GAME_H
+//-----------------------------------------------------------
+// Name: Game
+//
+// Description: The Game class creates a poker game between
+//      the specified player types.
+//
+// -----------------------------------------------------------
 
+#pragma once
+#include "playertype.h"
+using namespace std;
 
-class game {
+class Game {
+public:
+    Game();
+    bool playGame(PlayerType p0, PlayerType p1,
+            int &chips0, int &chips1, bool reportFlag);
 
+private:
+    PlayerType p0;
+    PlayerType p1;
+    int chips0;
+    int chips1;
+    bool reportFlag;
 };
-
-
-#endif //BLOCKHEADPOKER_GAME_H
