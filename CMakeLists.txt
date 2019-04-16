@@ -3,4 +3,4 @@ project(untitled1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled1 main.cpp cmake-build-debug/playertype.h card.h card.cpp cmake-build-debug/bet.cpp cmake-build-debug/bet.h)
+add_executable(untitled1 main.cpp cmake-build-debug/playertype.h card.h card.cpp cmake-build-debug/bet.cpp cmake-build-debug/bet.h cmake-build-debug/game.cpp cmake-build-debug/game.h)
