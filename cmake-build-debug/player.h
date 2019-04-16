@@ -42,7 +42,7 @@ public:
     void addChips(int chips);
     int getChips();
 
-private:
+protected:
     int playerID;
     int playerChips;
     Hand playerHand;

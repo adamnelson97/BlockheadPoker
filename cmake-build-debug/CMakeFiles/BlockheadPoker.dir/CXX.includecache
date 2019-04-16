@@ -11,20 +11,12 @@ string
 -
 
 Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.cpp
+iostream
+-
 game.h
 Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
 
 Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
-
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/hand.cpp
-hand.h
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/hand.h
-vector
--
-card.h
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
-
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/hand.h
 vector
 -
 card.h

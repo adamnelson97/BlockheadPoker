@@ -20,6 +20,7 @@ CMakeFiles/BlockheadPoker.dir/card.cpp.obj
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.cpp
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj
+ Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.cpp
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
 CMakeFiles/BlockheadPoker.dir/hand.cpp.obj
@@ -35,6 +36,7 @@ CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/humanplayer.h
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/player.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj
+ Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
  Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/main.cpp
 CMakeFiles/BlockheadPoker.dir/player.cpp.obj

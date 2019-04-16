@@ -24,6 +24,8 @@
 // -----------------------------------------------------------
 
 #pragma once
+#include <vector>
+#include "card.h"
 using namespace std;
 
 
@@ -39,4 +41,8 @@ public:
     int chips0;
     int chips1;
     bool reportFlag;
+    vector<Card> deck;
+
+private:
+    void popDeck();
 };
