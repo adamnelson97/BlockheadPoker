@@ -1,5 +1,5 @@
 # cmake_minimum_required(VERSION <specify CMake version here>)
-project(untitled1)
+project(BlockheadPoker)
 
 set(CMAKE_CXX_STANDARD 14)
 

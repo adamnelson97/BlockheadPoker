@@ -23,9 +23,10 @@
 // -----------------------------------------------------------
 
 #include "player.h"
+#include "alphaplayer.h"
 using namespace std;
 
-int Player::getBet(Hand opponent, BetHistory bh,
+int AlphaPlayer::getBet(Hand opponent, BetHistory bh,
                    int bet2player, bool canRaise, int pot) {
     return 0;
     // TODO complete this function

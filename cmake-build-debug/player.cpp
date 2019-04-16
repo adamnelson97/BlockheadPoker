@@ -49,7 +49,7 @@ void Player::clearHand() {
 }
 
 void Player::dealCard(Card c) {
-    playerHand.push_back(c);
+    playerHand.addCard(c);
 }
 
 Hand Player::getHand() {

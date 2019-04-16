@@ -17,7 +17,7 @@
 //
 // -----------------------------------------------------------
 
-#include "bet.h
+#include "bet.h"
 using namespace std;
 
 Bet::Bet(int amount, int player) {

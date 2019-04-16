@@ -22,6 +22,10 @@
 #include "card.h"
 using namespace std;
 
+Hand::Hand() {
+
+}
+
 void Hand::clear() {
     cards.clear();
 }
@@ -39,14 +43,14 @@ Card Hand::getCard(int n) {
 }
 
 Hand Hand::getVisible() {
-    vector<Card> visibleCards;
+    Hand visible;
     for (Card currCard : cards) {
         if (currCard.isFaceUp()) {
-            visibleCards.push_back(currCard);
+            visible.cards.push_back(currCard);
         }
     }
 
-    return visibleCards;
+    return visible;
 }
 
 int Hand::evaluate() {
