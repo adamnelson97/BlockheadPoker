@@ -20,6 +20,7 @@ CMakeFiles/BlockheadPoker.dir/card.cpp.obj: card.cpp
 CMakeFiles/BlockheadPoker.dir/card.cpp.obj: card.h
 
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: game.cpp
+CMakeFiles/BlockheadPoker.dir/game.cpp.obj: game.h
 
 CMakeFiles/BlockheadPoker.dir/hand.cpp.obj: card.h
 CMakeFiles/BlockheadPoker.dir/hand.cpp.obj: hand.cpp
@@ -33,6 +34,7 @@ CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj: humanplayer.cpp
 CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj: humanplayer.h
 CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj: player.h
 
+CMakeFiles/BlockheadPoker.dir/main.cpp.obj: game.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: main.cpp
 
 CMakeFiles/BlockheadPoker.dir/player.cpp.obj: bet.h

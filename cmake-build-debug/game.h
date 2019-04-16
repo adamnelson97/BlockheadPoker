@@ -24,16 +24,16 @@
 // -----------------------------------------------------------
 
 #pragma once
-#include "playertype.h"
 using namespace std;
+
+
+enum PlayerType { HUMAN, ALPHA, BETA };
 
 class Game {
 public:
     Game();
     bool playGame(PlayerType p0, PlayerType p1,
             int &chips0, int &chips1, bool reportFlag);
-
-private:
     PlayerType p0;
     PlayerType p1;
     int chips0;

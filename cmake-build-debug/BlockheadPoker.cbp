@@ -131,9 +131,6 @@
 		<Unit filename="Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/player.h">
 			<Option target="BlockheadPoker"/>
 		</Unit>
-		<Unit filename="Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/playertype.h">
-			<Option target="BlockheadPoker"/>
-		</Unit>
 		<Unit filename="Z:/adit/My Documents/BlockheadPoker/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
