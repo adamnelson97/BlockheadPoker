@@ -28,6 +28,7 @@
 #include "bet.h"
 #include "hand.h"
 #include "player.h"
+#include <iostream>
 using namespace std;
 
 Player::Player() {
@@ -41,6 +42,7 @@ Player::Player(int id, int chips) {
 
 int Player::getBet(Hand opponent, BetHistory bh,
         int bet2player, bool canRaise, int pot) {
+    cout << "Fuck you" << endl;
     return 0; // This is overridden by child classes
 }
 

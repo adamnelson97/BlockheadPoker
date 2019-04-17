@@ -27,6 +27,8 @@
 #include <vector>
 #include "card.h"
 #include "bethistory.h"
+#include "humanplayer.h"
+#include "alphaplayer.h"
 using namespace std;
 
 
@@ -46,6 +48,11 @@ public:
 
 private:
     void popDeck();
+    bool runHH(HumanPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
+    bool runHA(HumanPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
+    bool runAA(AlphaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
+    bool runAH(AlphaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
+
     int thePot; // Tracks the total monies in the betting pool
     BetHistory betHistory;
     int playersBet;

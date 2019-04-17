@@ -42,11 +42,15 @@ CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj
+ C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/alphaplayer.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/game.h
+ C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/hand.h
+ C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/main.cpp
+ C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 CMakeFiles/BlockheadPoker.dir/player.cpp.obj
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
  C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h

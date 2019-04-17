@@ -40,5 +40,5 @@ int BetHistory::getCount() {
 }
 
 Bet BetHistory::getBet(int n) {
-    return bets[n-1];
+    return bets[n];
 }

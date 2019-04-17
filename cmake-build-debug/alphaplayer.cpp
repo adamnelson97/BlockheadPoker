@@ -24,10 +24,29 @@
 
 #include "player.h"
 #include "alphaplayer.h"
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 int AlphaPlayer::getBet(Hand opponent, BetHistory bh,
                    int bet2player, bool canRaise, int pot) {
-    return 0;
-    // TODO complete this function
+
+    int betAmt;
+    while (true) {
+        srand(time(NULL));
+        betAmt = rand() % (bet2player + 10); // Randomly chooses to Check/Fold/Call/Raise
+
+        if (betAmt > bet2player) {
+            if (canRaise) {
+                if (betAmt < bet2player + 10) {
+                    cout << "Alpha Player has bet." << endl;
+                    return betAmt; // Player raises an acceptable amount
+                }
+            }
+        } else {
+            cout << "Alpha Player has bet." << endl;
+            return betAmt; // Check or Fold or Call
+        }
+    }
 }

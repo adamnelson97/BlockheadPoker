@@ -127,24 +127,52 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
         int &chips0, int &chips1, bool reportFlag) {
 
     // Make the two players
-    Player playerOne, playerTwo;
     if (p0 == HUMAN) {
-        playerOne = HumanPlayer(0, 1000);
+        if (p1 == HUMAN) {
+            HumanPlayer playerOne(0, 1000);
+            HumanPlayer playerTwo(0, 1000);
+            return runHH(playerOne, playerTwo, reportFlag);
+        } else if (p1 == ALPHA) {
+            HumanPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runHA(playerOne, playerTwo, reportFlag);
+        } else if (p1 == BETA) {
+            AlphaPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runAA(playerOne, playerTwo, reportFlag);
+        }
     } else if (p0 == ALPHA) {
-        playerOne = AlphaPlayer(0, 1000);
+        if (p1 == HUMAN) {
+            AlphaPlayer playerOne(0, 1000);
+            HumanPlayer playerTwo(0, 1000);
+            return runAH(playerOne, playerTwo, reportFlag);
+        } else if (p1 == ALPHA) {
+            AlphaPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runAA(playerOne, playerTwo, reportFlag);
+        } else if (p1 == BETA) {
+            AlphaPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runAA(playerOne, playerTwo, reportFlag);
+        }
     } else if (p0 == BETA) {
-        playerOne = AlphaPlayer(0, 1000);
+        if (p1 == HUMAN) {
+            AlphaPlayer playerOne(0, 1000);
+            HumanPlayer playerTwo(0, 1000);
+            return runAH(playerOne, playerTwo, reportFlag);
+        } else if (p1 == ALPHA) {
+            AlphaPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runAA(playerOne, playerTwo, reportFlag);
+        } else if (p1 == BETA) {
+            AlphaPlayer playerOne(0, 1000);
+            AlphaPlayer playerTwo(0, 1000);
+            return runAA(playerOne, playerTwo, reportFlag);
+        }
     }
-    // TODO Change this to BetaPlayer for Phase 2
+}
 
-    if (p1 == HUMAN) {
-        playerTwo = HumanPlayer(0, 1000);
-    } else if (p1 == ALPHA) {
-        playerTwo = AlphaPlayer(0, 1000);
-    } else if (p1 == BETA) {
-        playerTwo = AlphaPlayer(0, 1000);
-    }
-    // TODO Change this to BetaPlayer for Phase 2
+bool Game::runHH(HumanPlayer playerOne, HumanPlayer playerTwo, bool reportFlag) {
 
     completedRounds = 0;
     if (completedRounds % 2 == 0) {
@@ -156,6 +184,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
 
     // Begin betting rounds
     while (completedRounds < 20) {
+        cout << "Betting Round " << completedRounds + 1 << endl;
         // Reset the pot
         thePot = 0;
 
@@ -196,9 +225,11 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
         biddingRound = 0;
 
         while (biddingRound < 3 && playerHasFolded == false) {
+            cout << "Bidding Round " << biddingRound + 1 << endl;
             betToPlayer = 0;
             numPlayersChecked = 0;
             numRaises = 0;
+            betHistory.clearHistory();
 
             while (playerHasFolded == false && numPlayersChecked < 2) {
                 if (lastToRaise == playerTurn) {
@@ -211,10 +242,17 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
 
                 // Get player's bet
                 if (playerTurn == 0) {
+                    cout << "Player One's turn to bet." << endl;
                     playersBet = playerOne.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
                 } else {
+                    cout << "Player Two's turn to bet." << endl;
                     playersBet = playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
                 }
+
+                // Add bet to log
+                Bet bet(playersBet, playerTurn);
+                betHistory.addBet(bet);
+
 
                 // Check the bet
                 if (playersBet == -1) {
@@ -240,6 +278,8 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
                     playerTurn = 0;
                 }
             } // End of bidding round
+
+            biddingRound++;
 
             // Deal more cards
             // Player 1
@@ -270,11 +310,480 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
                      << ") is greater than Player Two's Hand (" << p2Score
                      << "), Player One wins the round!" << endl;
                 playerOne.addChips(thePot);
-            } else {
+            } else if (p2Score > p1Score){
                 cout << "Player Two's Hand (" << p2Score
                     << ") is greater than Player One's Hand (" << p1Score
                     << "), Player Two wins the round!" << endl;
                 playerTwo.addChips(thePot);
+            } else {
+                cout << "The hands are tied! (" << p1Score << "). No winner." << endl;
+                playerOne.addChips(thePot/2);
+                playerTwo.addChips(thePot/2);
+            }
+        }
+
+        completedRounds++; // End of round
+    }
+
+    return false;
+}
+bool Game::runHA(HumanPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag) {
+
+    completedRounds = 0;
+    if (completedRounds % 2 == 0) {
+        playerTurn = 0;
+    } else {
+        playerTurn = 1;
+    }
+    lastToRaise = 2;
+
+    // Begin betting rounds
+    while (completedRounds < 20) {
+        cout << "Betting Round " << completedRounds + 1 << endl;
+        // Reset the pot
+        thePot = 0;
+
+        // Shuffle the deck
+        random_shuffle(deck.begin(), deck.end());
+
+        // Deal each player cards
+        //Player One
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerOne.dealCard(tempCard);
+        }
+        //Player Two
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerTwo.dealCard(tempCard);
+        }
+
+        // Put buy in into the pot
+        playerOne.addChips(-10);
+        playerTwo.addChips(-10);
+        thePot = 20; // Increases the pot by the two players buy ins
+
+        // Begin bidding rounds
+        playerHasFolded = false;
+        biddingRound = 0;
+
+        while (biddingRound < 3 && playerHasFolded == false) {
+            cout << "Bidding Round " << biddingRound + 1 << endl;
+            betToPlayer = 0;
+            numPlayersChecked = 0;
+            numRaises = 0;
+            betHistory.clearHistory();
+
+            while (playerHasFolded == false && numPlayersChecked < 2) {
+                if (lastToRaise == playerTurn) {
+                    canRaise = false; // Can't raise your own bet
+                } else if (numRaises < 3) {
+                    canRaise = true;
+                } else {
+                    canRaise = false; // Even though you can raise, no more are allowed per the rules
+                }
+
+                // Get player's bet
+                if (playerTurn == 0) {
+                    cout << "Player One's turn to bet." << endl;
+                    playersBet = playerOne.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                } else {
+                    cout << "Player Two's turn to bet." << endl;
+                    playersBet = playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                }
+
+                // Add bet to log
+                Bet bet(playersBet, playerTurn);
+                betHistory.addBet(bet);
+
+
+                // Check the bet
+                if (playersBet == -1) {
+                    return false; // Human wants to exit game
+                } else if (playersBet == 0 && betToPlayer == 0) { // Check
+                    numPlayersChecked++;
+                } else if (playersBet == 0 && betToPlayer > 0) { // Fold
+                    playerHasFolded = true;
+                } else if (playersBet == betToPlayer) { // Call
+                    betToPlayer = 0;
+                    thePot += playersBet;
+                } else if (playersBet > betToPlayer) { // Raise
+                    numRaises += 1;
+                    lastToRaise = playerTurn;
+                    betToPlayer = playersBet - betToPlayer;
+                    thePot += playersBet;
+                }
+
+                // Update who next player is
+                if (playerTurn == 0) {
+                    playerTurn = 1;
+                } else {
+                    playerTurn = 0;
+                }
+            } // End of bidding round
+
+            biddingRound++;
+
+            // Deal more cards
+            // Player 1
+            Card tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerOne.dealCard(tempCard);
+            // Player 2
+            tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerTwo.dealCard(tempCard);
+        }
+
+        if (playerHasFolded == true) {
+            if (playerTurn == 0) {
+                cout << "Player Two folds. Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else {
+                cout << "Player One folds. Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            }
+        } else {
+            int p1Score = playerOne.getHand().evaluate();
+            int p2Score = playerTwo.getHand().evaluate();
+            if (p1Score > p2Score) {
+                cout << "Player One's Hand (" << p1Score
+                     << ") is greater than Player Two's Hand (" << p2Score
+                     << "), Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else if (p2Score > p1Score){
+                cout << "Player Two's Hand (" << p2Score
+                     << ") is greater than Player One's Hand (" << p1Score
+                     << "), Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            } else {
+                cout << "The hands are tied! (" << p1Score << "). No winner." << endl;
+                playerOne.addChips(thePot/2);
+                playerTwo.addChips(thePot/2);
+            }
+        }
+
+        completedRounds++; // End of round
+    }
+
+    return false;
+}
+bool Game::runAA(AlphaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag) {
+
+    completedRounds = 0;
+    if (completedRounds % 2 == 0) {
+        playerTurn = 0;
+    } else {
+        playerTurn = 1;
+    }
+    lastToRaise = 2;
+
+    // Begin betting rounds
+    while (completedRounds < 20) {
+        cout << "Betting Round " << completedRounds + 1 << endl;
+        // Reset the pot
+        thePot = 0;
+
+        // Shuffle the deck
+        random_shuffle(deck.begin(), deck.end());
+
+        // Deal each player cards
+        //Player One
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerOne.dealCard(tempCard);
+        }
+        //Player Two
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerTwo.dealCard(tempCard);
+        }
+
+        // Put buy in into the pot
+        playerOne.addChips(-10);
+        playerTwo.addChips(-10);
+        thePot = 20; // Increases the pot by the two players buy ins
+
+        // Begin bidding rounds
+        playerHasFolded = false;
+        biddingRound = 0;
+
+        while (biddingRound < 3 && playerHasFolded == false) {
+            cout << "Bidding Round " << biddingRound + 1 << endl;
+            betToPlayer = 0;
+            numPlayersChecked = 0;
+            numRaises = 0;
+            betHistory.clearHistory();
+
+            while (playerHasFolded == false && numPlayersChecked < 2) {
+                if (lastToRaise == playerTurn) {
+                    canRaise = false; // Can't raise your own bet
+                } else if (numRaises < 3) {
+                    canRaise = true;
+                } else {
+                    canRaise = false; // Even though you can raise, no more are allowed per the rules
+                }
+
+                // Get player's bet
+                if (playerTurn == 0) {
+                    cout << "Player One's turn to bet." << endl;
+                    playersBet = playerOne.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                } else {
+                    cout << "Player Two's turn to bet." << endl;
+                    playersBet = playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                }
+
+                // Add bet to log
+                Bet bet(playersBet, playerTurn);
+                betHistory.addBet(bet);
+
+
+                // Check the bet
+                if (playersBet == -1) {
+                    return false; // Human wants to exit game
+                } else if (playersBet == 0 && betToPlayer == 0) { // Check
+                    numPlayersChecked++;
+                } else if (playersBet == 0 && betToPlayer > 0) { // Fold
+                    playerHasFolded = true;
+                } else if (playersBet == betToPlayer) { // Call
+                    betToPlayer = 0;
+                    thePot += playersBet;
+                } else if (playersBet > betToPlayer) { // Raise
+                    numRaises += 1;
+                    lastToRaise = playerTurn;
+                    betToPlayer = playersBet - betToPlayer;
+                    thePot += playersBet;
+                }
+
+                // Update who next player is
+                if (playerTurn == 0) {
+                    playerTurn = 1;
+                } else {
+                    playerTurn = 0;
+                }
+            } // End of bidding round
+
+            biddingRound++;
+
+            // Deal more cards
+            // Player 1
+            Card tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerOne.dealCard(tempCard);
+            // Player 2
+            tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerTwo.dealCard(tempCard);
+        }
+
+        if (playerHasFolded == true) {
+            if (playerTurn == 0) {
+                cout << "Player Two folds. Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else {
+                cout << "Player One folds. Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            }
+        } else {
+            int p1Score = playerOne.getHand().evaluate();
+            int p2Score = playerTwo.getHand().evaluate();
+            if (p1Score > p2Score) {
+                cout << "Player One's Hand (" << p1Score
+                     << ") is greater than Player Two's Hand (" << p2Score
+                     << "), Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else if (p2Score > p1Score){
+                cout << "Player Two's Hand (" << p2Score
+                     << ") is greater than Player One's Hand (" << p1Score
+                     << "), Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            } else {
+                cout << "The hands are tied! (" << p1Score << "). No winner." << endl;
+                playerOne.addChips(thePot/2);
+                playerTwo.addChips(thePot/2);
+            }
+        }
+
+        completedRounds++; // End of round
+    }
+
+    return false;
+}
+bool Game::runAH(AlphaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag) {
+
+    completedRounds = 0;
+    if (completedRounds % 2 == 0) {
+        playerTurn = 0;
+    } else {
+        playerTurn = 1;
+    }
+    lastToRaise = 2;
+
+    // Begin betting rounds
+    while (completedRounds < 20) {
+        cout << "Betting Round " << completedRounds + 1 << endl;
+        // Reset the pot
+        thePot = 0;
+
+        // Shuffle the deck
+        random_shuffle(deck.begin(), deck.end());
+
+        // Deal each player cards
+        //Player One
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerOne.dealCard(tempCard);
+        }
+        //Player Two
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerTwo.dealCard(tempCard);
+        }
+
+        // Put buy in into the pot
+        playerOne.addChips(-10);
+        playerTwo.addChips(-10);
+        thePot = 20; // Increases the pot by the two players buy ins
+
+        // Begin bidding rounds
+        playerHasFolded = false;
+        biddingRound = 0;
+
+        while (biddingRound < 3 && playerHasFolded == false) {
+            cout << "Bidding Round " << biddingRound + 1 << endl;
+            betToPlayer = 0;
+            numPlayersChecked = 0;
+            numRaises = 0;
+            betHistory.clearHistory();
+
+            while (playerHasFolded == false && numPlayersChecked < 2) {
+                if (lastToRaise == playerTurn) {
+                    canRaise = false; // Can't raise your own bet
+                } else if (numRaises < 3) {
+                    canRaise = true;
+                } else {
+                    canRaise = false; // Even though you can raise, no more are allowed per the rules
+                }
+
+                // Get player's bet
+                if (playerTurn == 0) {
+                    cout << "Player One's turn to bet." << endl;
+                    playersBet = playerOne.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                } else {
+                    cout << "Player Two's turn to bet." << endl;
+                    playersBet = playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                }
+
+                // Add bet to log
+                Bet bet(playersBet, playerTurn);
+                betHistory.addBet(bet);
+
+
+                // Check the bet
+                if (playersBet == -1) {
+                    return false; // Human wants to exit game
+                } else if (playersBet == 0 && betToPlayer == 0) { // Check
+                    numPlayersChecked++;
+                } else if (playersBet == 0 && betToPlayer > 0) { // Fold
+                    playerHasFolded = true;
+                } else if (playersBet == betToPlayer) { // Call
+                    betToPlayer = 0;
+                    thePot += playersBet;
+                } else if (playersBet > betToPlayer) { // Raise
+                    numRaises += 1;
+                    lastToRaise = playerTurn;
+                    betToPlayer = playersBet - betToPlayer;
+                    thePot += playersBet;
+                }
+
+                // Update who next player is
+                if (playerTurn == 0) {
+                    playerTurn = 1;
+                } else {
+                    playerTurn = 0;
+                }
+            } // End of bidding round
+
+            biddingRound++;
+
+            // Deal more cards
+            // Player 1
+            Card tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerOne.dealCard(tempCard);
+            // Player 2
+            tempCard = deck.back();
+            deck.pop_back();
+            tempCard.setFaceUp(true);
+            playerTwo.dealCard(tempCard);
+        }
+
+        if (playerHasFolded == true) {
+            if (playerTurn == 0) {
+                cout << "Player Two folds. Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else {
+                cout << "Player One folds. Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            }
+        } else {
+            int p1Score = playerOne.getHand().evaluate();
+            int p2Score = playerTwo.getHand().evaluate();
+            if (p1Score > p2Score) {
+                cout << "Player One's Hand (" << p1Score
+                     << ") is greater than Player Two's Hand (" << p2Score
+                     << "), Player One wins the round!" << endl;
+                playerOne.addChips(thePot);
+            } else if (p2Score > p1Score){
+                cout << "Player Two's Hand (" << p2Score
+                     << ") is greater than Player One's Hand (" << p1Score
+                     << "), Player Two wins the round!" << endl;
+                playerTwo.addChips(thePot);
+            } else {
+                cout << "The hands are tied! (" << p1Score << "). No winner." << endl;
+                playerOne.addChips(thePot/2);
+                playerTwo.addChips(thePot/2);
             }
         }
 
