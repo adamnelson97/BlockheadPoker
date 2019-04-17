@@ -54,6 +54,8 @@ private:
     bool playerHasFolded;
     int numPlayersChecked;
     int completedRounds;
+    int biddingRound;
     bool canRaise;
     int numRaises;
+    int lastToRaise;
 };

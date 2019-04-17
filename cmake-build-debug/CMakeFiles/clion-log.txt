@@ -1,4 +1,1 @@
-"C:\Program Files (x86)\JetBrains\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "Z:\adit\My Documents\BlockheadPoker"
--- Configuring done
--- Generating done
--- Build files have been written to: Z:/adit/My Documents/BlockheadPoker/cmake-build-debug
+Environment (MinGW/Cygwin/Visual Studio/WSL/Remote Host) is not selected Configure
