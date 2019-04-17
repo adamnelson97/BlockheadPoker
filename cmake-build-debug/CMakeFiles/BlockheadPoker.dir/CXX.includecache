@@ -6,25 +6,19 @@
 
 #IncludeRegexTransform: 
 
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
-string
--
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
 
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.cpp
-iostream
--
-game.h
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
-
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.cpp
+bethistory.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
+bet.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
 vector
 -
-card.h
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/card.h
 
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/main.cpp
-iostream
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
+bet.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
+vector
 -
-game.h
-Z:/adit/My Documents/BlockheadPoker/cmake-build-debug/game.h
 

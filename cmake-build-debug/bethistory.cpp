@@ -23,6 +23,10 @@
 #include <vector>
 using namespace std;
 
+BetHistory::BetHistory() {
+    // Default Constructor
+}
+
 void BetHistory::clearHistory() {
     bets.clear();
 }

@@ -31,6 +31,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <vector>
+#include "bethistory.h"
 using namespace std;
 
 Game::Game() {
@@ -270,7 +271,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
                      << "), Player One wins the round!" << endl;
                 playerOne.addChips(thePot);
             } else {
-                out << "Player Two's Hand (" << p2Score
+                cout << "Player Two's Hand (" << p2Score
                     << ") is greater than Player One's Hand (" << p1Score
                     << "), Player Two wins the round!" << endl;
                 playerTwo.addChips(thePot);
