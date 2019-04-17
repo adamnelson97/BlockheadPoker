@@ -45,4 +45,5 @@ public:
 
 private:
     void popDeck();
+    int thePot; // Tracks the total monies in the betting pool
 };

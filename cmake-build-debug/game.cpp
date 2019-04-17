@@ -28,6 +28,9 @@
 #include "player.h"
 #include "humanplayer.h"
 #include "alphaplayer.h"
+#include <algorithm>
+#include <cstdlib>
+#include <vector>
 using namespace std;
 
 Game::Game() {
@@ -36,34 +39,6 @@ Game::Game() {
     // Populate the deck of cards
     popDeck();
 }
-
-bool Game::playGame(PlayerType p0, PlayerType p1,
-        int &chips0, int &chips1, bool reportFlag) {
-
-    // Make the two players
-    if (p0 == HUMAN) {
-        HumanPlayer playerOne(0, 1000);
-    } else if (p0 == ALPHA) {
-        AlphaPlayer playerOne(0, 1000);
-    } else if (p0 == BETA) {
-        AlphaPlayer playerOne(0, 1000);
-        // TODO Change this to BetaPlayer for Phase 2
-    }
-
-    if (p1 == HUMAN) {
-        HumanPlayer playerTwo(0, 1000);
-    } else if (p1 == ALPHA) {
-        AlphaPlayer playerTwo(0, 1000);
-    } else if (p1 == BETA) {
-        AlphaPlayer playerTwo(0, 1000);
-        // TODO Change this to BetaPlayer for Phase 2
-    }
-
-
-
-    return false;
-}
-
 
 // Populate the deck of cards
 void Game::popDeck() {
@@ -145,4 +120,78 @@ void Game::popDeck() {
         }
     }
 
+}
+
+bool Game::playGame(PlayerType p0, PlayerType p1,
+        int &chips0, int &chips1, bool reportFlag) {
+
+    // Make the two players
+    Player playerOne, playerTwo;
+    if (p0 == HUMAN) {
+        playerOne = HumanPlayer(0, 1000);
+    } else if (p0 == ALPHA) {
+        playerOne = AlphaPlayer(0, 1000);
+    } else if (p0 == BETA) {
+        playerOne = AlphaPlayer(0, 1000);
+    }
+    // TODO Change this to BetaPlayer for Phase 2
+
+    if (p1 == HUMAN) {
+        playerTwo = HumanPlayer(0, 1000);
+    } else if (p1 == ALPHA) {
+        playerTwo = AlphaPlayer(0, 1000);
+    } else if (p1 == BETA) {
+        playerTwo = AlphaPlayer(0, 1000);
+    }
+    // TODO Change this to BetaPlayer for Phase 2
+
+    int completedRounds = 0;
+    
+    while (completedRounds < 20) {
+        // Shuffle the deck
+        random_shuffle(deck.begin(), deck.end());
+
+        // Deal each player cards
+        //Player One
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerOne.dealCard(tempCard);
+        }
+        //Player Two
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = deck.back();
+            deck.pop_back(); // Removes the card from the deck
+            if (i == 0) {
+                tempCard.setFaceUp(false);
+            } else {
+                tempCard.setFaceUp(true);
+            }
+            playerTwo.dealCard(tempCard);
+        }
+
+        // Put money into the pot
+        playerOne.addChips(-10);
+        if (playerOne.getChips() < 0) {
+            cout << "Player One can't buy in, they lose!" << endl;
+            return false;
+        }
+        playerTwo.addChips(-10);
+        if (playerTwo.getChips() < 0) {
+            cout << "Player Two can't buy in, they lose!" << endl;
+            return false;
+        }
+
+        thePot = 20;
+
+
+        completedRounds++;
+    }
+
+    return false;
 }

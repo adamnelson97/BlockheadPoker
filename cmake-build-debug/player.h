@@ -32,8 +32,9 @@ using namespace std;
 
 class Player {
 public:
+    Player();
     Player(int id, int chips);
-    virtual int getBet(Hand opponent, BetHistory bh,
+    int getBet(Hand opponent, BetHistory bh,
             int bet2player, bool canRaise, int pot);
     int getID();
     void clearHand();

@@ -24,7 +24,7 @@ using namespace std;
 class Card {
 public:
     Card();
-    Card(string cardName, int cardValue);
+    Card(string cardName, int cardValue); // Default is face up
     void setCard(string cardName, int cardValue);
     string getName();
     int getValue();

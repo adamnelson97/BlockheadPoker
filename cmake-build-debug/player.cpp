@@ -30,6 +30,10 @@
 #include "player.h"
 using namespace std;
 
+Player::Player() {
+    // Default Constructor
+}
+
 Player::Player(int id, int chips) {
     playerID = id;
     playerChips = chips;
@@ -37,7 +41,7 @@ Player::Player(int id, int chips) {
 
 int Player::getBet(Hand opponent, BetHistory bh,
         int bet2player, bool canRaise, int pot) {
-    return 0;
+    return 0; // This is overridden by child classes
 }
 
 int Player::getID() {
