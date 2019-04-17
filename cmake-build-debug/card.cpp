@@ -24,13 +24,11 @@ using namespace std;
 Card::Card(string cardName, int cardValue) {
     this->cardName = cardName;
     this->cardValue = cardValue;
-    faceUp = true;
 }
 
 void Card::setCard(string cardName, int cardValue) {
     this->cardName = cardName;
     this->cardValue = cardValue;
-    faceUp = false;
 }
 
 string Card::getName() {

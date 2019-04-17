@@ -35,18 +35,14 @@ int AlphaPlayer::getBet(Hand opponent, BetHistory bh,
     int betAmt;
     while (true) {
         srand(time(NULL));
-        betAmt = rand() % (bet2player + 10); // Randomly chooses to Check/Fold/Call/Raise
 
-        if (betAmt > bet2player) {
-            if (canRaise) {
-                if (betAmt < bet2player + 10) {
-                    cout << "Alpha Player has bet." << endl;
-                    return betAmt; // Player raises an acceptable amount
-                }
-            }
+        if (canRaise) {
+            betAmt = rand() % (bet2player + 10); // Alpha will always raise if possible
+            cout << "Alpha Player has bet." << endl;
+            return betAmt; // Player raises an acceptable amount
         } else {
             cout << "Alpha Player has bet." << endl;
-            return betAmt; // Check or Fold or Call
+            return bet2player; // Check or Call
         }
     }
 }

@@ -30,6 +30,7 @@ int HumanPlayer::getBet(Hand opponent, BetHistory bh,
         int bet2player, bool canRaise, int pot) {
 
     // Display bet history
+    cout << "\nBet History:" << endl;
     for (int i = 0; i < bh.getCount(); i++) {
         cout << "Player " << bh.getBet(i).getPlayer() << " bet " << bh.getBet(i).getAmount() << endl;
     }
@@ -39,17 +40,21 @@ int HumanPlayer::getBet(Hand opponent, BetHistory bh,
     for (int i = 0; i < opponent.getCount(); i++) {
         cout << opponent.getCard(i).getName() << endl;
     }
+    cout << "Value: " << opponent.evaluate() << endl;
 
     cout << "\nYour Hand:" << endl;
     for (int i = 0; i < playerHand.getCount(); i++) {
         cout << playerHand.getCard(i).getName() << endl;
     }
-    
+    cout << "Value: " << playerHand.evaluate() << endl;
+
+    cout << "\nPot: " << pot << endl;
+
     // Make Bet
     if (bet2player == 0) {
-        cout << "You can Check. Enter a bet of 0." << endl;
+        cout << "\nYou can Check. Enter a bet of 0." << endl;
     } else {
-        cout << "You can Fold. Enter a bet of 0." << endl;
+        cout << "\nYou can Fold. Enter a bet of 0." << endl;
         cout << "You can Call. Enter a bet of " << bet2player << "." << endl;
     }
 
@@ -64,24 +69,24 @@ int HumanPlayer::getBet(Hand opponent, BetHistory bh,
     string bet;
     int betAmt;
     while (true) {
-        cout << "Bet: " << flush;
+        cout << "\nBet: " << flush;
         getline(cin, bet);
-        if (bet == "Q") {
+        if (bet == "Q" || bet == "q") {
             return -1; // Game is over
         }
         betAmt = std::stoi(bet, nullptr, 0);
-        if (betAmt > bet2player) {
+        if (betAmt == 0) {
+            return betAmt; // Check or Fold
+        } else if (betAmt == bet2player) {
+            return betAmt; // Call
+        } else if (betAmt > bet2player && betAmt < betAmt + 10) {
             if (canRaise) {
-                if (betAmt < bet2player + 10) {
-                    return betAmt; // Player raises an acceptable amount
-                } else {
-                    cout << "Bet is too large. Enter a smaller bet." << endl;
-                }
+                return betAmt; // Raise
             } else {
-                cout << "You are not allowed to raise right now." << endl;
+                cout << "You cannot raise right now." << endl;
             }
         } else {
-            return betAmt; // Player checks or folds or calls
+            cout << "Enter a valid bet." << endl;
         }
     }
 }
