@@ -54,6 +54,9 @@ Hand Hand::getVisible() {
 }
 
 int Hand::evaluate() {
-    return 0;
-    // TODO complete evaluate method for Hand class
+    int totalPoints = 0;
+    for (Card card : cards) {
+        totalPoints += card.getValue();
+    }
+    return totalPoints;
 }
