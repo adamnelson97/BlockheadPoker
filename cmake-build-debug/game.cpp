@@ -145,8 +145,10 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
     }
     // TODO Change this to BetaPlayer for Phase 2
 
-    int completedRounds = 0;
-    
+    completedRounds = 0;
+    playerTurn = 0;
+
+    // Begin betting rounds
     while (completedRounds < 20) {
         // Shuffle the deck
         random_shuffle(deck.begin(), deck.end());
@@ -177,20 +179,36 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
 
         // Put money into the pot
         playerOne.addChips(-10);
-        if (playerOne.getChips() < 0) {
-            cout << "Player One can't buy in, they lose!" << endl;
-            return false;
-        }
         playerTwo.addChips(-10);
-        if (playerTwo.getChips() < 0) {
-            cout << "Player Two can't buy in, they lose!" << endl;
-            return false;
+        thePot = 20; // Increases the pot by the two players buy ins
+
+        // Begin betting
+        betToPlayer = 0;
+        playerHasFolded = false;
+        numPlayersChecked = 0;
+        numRaises = 0;
+
+        while (playerHasFolded == false && numPlayersChecked < 2) {
+            if (numRaises < 3) {
+                canRaise = true;
+            }
+            // Get player's bet
+            if (playerTurn == 0) {
+                playersBet = playerOne.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                playerTurn = 1;
+            } else {
+                playersBet = playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);
+                playerTurn = 0;
+            }
+
+            if (playersBet == 0) {
+                numPlayersChecked++;
+            } else if (playersBet > 0) {
+                
+            }
         }
 
-        thePot = 20;
-
-
-        completedRounds++;
+        completedRounds++; // End of round
     }
 
     return false;

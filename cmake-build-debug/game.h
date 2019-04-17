@@ -26,6 +26,7 @@
 #pragma once
 #include <vector>
 #include "card.h"
+#include "bethistory.h"
 using namespace std;
 
 
@@ -46,4 +47,13 @@ public:
 private:
     void popDeck();
     int thePot; // Tracks the total monies in the betting pool
+    BetHistory betHistory;
+    int playersBet;
+    int betToPlayer;
+    int playerTurn;
+    bool playerHasFolded;
+    int numPlayersChecked;
+    int completedRounds;
+    bool canRaise;
+    int numRaises;
 };
