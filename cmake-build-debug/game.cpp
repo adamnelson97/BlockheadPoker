@@ -141,9 +141,9 @@ bool Game::playGame(PlayerType p0, PlayerType p1,
             AlphaPlayer playerTwo(0, 1000);
             return runHA(playerOne, playerTwo, reportFlag);
         } else if (p1 == BETA) {
-            AlphaPlayer playerOne(0, 1000);
+            HumanPlayer playerOne(0, 1000);
             AlphaPlayer playerTwo(0, 1000);
-            return runAA(playerOne, playerTwo, reportFlag);
+            return runHA(playerOne, playerTwo, reportFlag);
         }
     } else if (p0 == ALPHA) {
         if (p1 == HUMAN) {

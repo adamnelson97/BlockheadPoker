@@ -30,12 +30,19 @@ int main() {
 
         if (command == "HELP" || command == "help") {
             printComms();
-        }
-        else if (command == "PLAY" || command == "play") {
+        } else if (command == "PLAY" || command == "play") {
            play();
-        }
-        else if (command == "QUIT" || command == "quit") {
+        } else if (command == "QUIT" || command == "quit") {
             quit = true;
+        } else if (command == "TEST1" || command =="test1") {
+            Game game;
+            int chips0, chips1;
+
+            if (game.playGame(ALPHA, ALPHA, chips0, chips1, true) == false) {
+                cout << "Thank you for playing!" << endl;
+            } else {
+                cerr << "Error: playGame returned true." << endl;
+            }
         }
         else if (command == "") {
             cout << endl;
@@ -51,7 +58,8 @@ int main() {
 void printComms() {
     cout << "\nCOMMANDS" << endl;
     cout << "HELP - Prints this page." << endl;
-    cout << "PLAY - Starts a gam.e" << endl;
+    cout << "PLAY - Starts a game." << endl;
+    cout << "TEST1 - Runs test between two Alpha players with console output." << endl;
     cout << "QUIT - Ends the program.\n" << endl;
 }
 
