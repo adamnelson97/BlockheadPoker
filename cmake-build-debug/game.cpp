@@ -2037,6 +2037,11 @@ bool Game::monteCarlo(AlphaPlayer playerOne, BetaPlayer playerTwo, bool reportFl
 
     int beta_wins = 0;
     for (int i = 0; i < 100; i++) {
+        cout << "Game " << i << ": \t" << flush;
+        // Reset chip count for each game
+        playerOne.addChips(1000-playerOne.getChips());
+        playerTwo.addChips(1000-playerTwo.getChips());
+
         completedRounds = 0;
         if (completedRounds % 2 == 0) {
             playerTurn = 0;
@@ -2232,10 +2237,10 @@ bool Game::monteCarlo(AlphaPlayer playerOne, BetaPlayer playerTwo, bool reportFl
             completedRounds++; // End of round
         }
 
-        if (reportFlag && playerOne.getChips() > playerTwo.getChips()) {
-            cout << "Alpha wins the game!" << endl;
-        } else if (reportFlag && playerOne.getChips() < playerTwo.getChips()) {
-            cout << "Beta wins the game!" << endl;
+        if (playerOne.getChips() > playerTwo.getChips()) {
+            cout << "Alpha wins the game! \tBW: " << beta_wins << "/" << i << endl;
+        } else if (playerOne.getChips() < playerTwo.getChips()) {
+            cout << "Beta wins the game! \tBW: " << beta_wins << "/" << i << endl;
             beta_wins++;
         } else {
             cout << "The game is a tie!" << endl;

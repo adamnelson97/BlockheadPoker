@@ -47,17 +47,24 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh,
          * The Beta will always bet if they have the advantage, but always fold if
          * they are at a disadvantage. The logic is to cut your losses early and
          * don't dig bigger holes.
+         *
+         * To give the Alpha AI a better chance, the Beta AI has a 20% chance of doing
+         * Check/Call instead of raising. This is effectively a 'handicap' for the Beta.
+         * This will slightly decrease the pot each round, thereby giving Alpha more
+         * chips after 20 rounds and a better chance of winning.
          */
 
         if (report) cout << "Beta Player has bet." << endl;
+        int willRaise = rand() % (5);
+
         if (bet2player == 0) {
             if (playerHand.evaluate() < opponent.evaluate()) betAmt =  0; // Check
-            else if (canRaise) betAmt =  5; // Raise
+            else if (canRaise && willRaise != 0) betAmt =  5; // Raise
             else betAmt =  0; // Forced to Check
         } else {
             if (playerHand.evaluate() < opponent.evaluate()) betAmt =  0; // Fold
             else if (playerHand.evaluate() > opponent.evaluate()) {
-                if (canRaise) betAmt =  bet2player + 7; // Raise
+                if (canRaise && willRaise != 0) betAmt =  bet2player + 7; // Raise
                 else betAmt =  bet2player; // Forced to Call
             }
             else betAmt =  bet2player; // Call
