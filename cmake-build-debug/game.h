@@ -40,12 +40,13 @@ class Game {
 public:
     Game();
     bool playGame(PlayerType p0, PlayerType p1,
-            int &chips0, int &chips1, bool reportFlag);
+            int &chips0, int &chips1, bool reportFlag, bool monteCarloSim);
     PlayerType p0;
     PlayerType p1;
     int chips0;
     int chips1;
     bool reportFlag;
+    bool monteCarloSim;
     vector<Card> deck;
 
 private:
@@ -59,6 +60,7 @@ private:
     bool runBH(BetaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
     bool runBA(BetaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
     bool runBB(BetaPlayer playerOne, BetaPlayer playerTwo, bool reportFlag);
+    bool monteCarlo(AlphaPlayer playerOne, BetaPlayer playerTwo, bool reportFlag);
 
     int thePot; // Tracks the total monies in the betting pool
     BetHistory betHistory;

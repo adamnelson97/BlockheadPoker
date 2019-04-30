@@ -35,7 +35,7 @@ public:
     Player();
     Player(int id, int chips);
     int getBet(Hand opponent, BetHistory bh,
-            int bet2player, bool canRaise, int pot);
+            int bet2player, bool canRaise, int pot, int report);
     int getID();
     void clearHand();
     void dealCard(Card c);

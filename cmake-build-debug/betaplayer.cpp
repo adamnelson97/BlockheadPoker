@@ -28,7 +28,7 @@
 using namespace std;
 
 int BetaPlayer::getBet(Hand opponent, BetHistory bh,
-                        int bet2player, bool canRaise, int pot) {
+                        int bet2player, bool canRaise, int pot, int report) {
 
     int betAmt;
     while (true) {
@@ -49,13 +49,19 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh,
          * don't dig bigger holes.
          */
 
+        if (report) cout << "Beta Player has bet." << endl;
         if (bet2player == 0) {
-            if (playerHand.evaluate() < opponent.evaluate()) return 0; // Check
-            else return 5; // Raise
+            if (playerHand.evaluate() < opponent.evaluate()) betAmt =  0; // Check
+            else if (canRaise) betAmt =  5; // Raise
+            else betAmt =  0; // Forced to Check
         } else {
-            if (playerHand.evaluate() < opponent.evaluate()) return 0; // Fold
-            else if (playerHand.evaluate() > opponent.evaluate()) return bet2player + 7; // Raise
-            else return bet2player; // Call
+            if (playerHand.evaluate() < opponent.evaluate()) betAmt =  0; // Fold
+            else if (playerHand.evaluate() > opponent.evaluate()) {
+                if (canRaise) betAmt =  bet2player + 7; // Raise
+                else betAmt =  bet2player; // Forced to Call
+            }
+            else betAmt =  bet2player; // Call
         }
+        return betAmt;
     }
 }

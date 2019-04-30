@@ -29,6 +29,7 @@ CMakeFiles/BlockheadPoker.dir/card.cpp.obj: card.h
 
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: alphaplayer.h
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: bet.h
+CMakeFiles/BlockheadPoker.dir/game.cpp.obj: betaplayer.h
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: bethistory.h
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: card.h
 CMakeFiles/BlockheadPoker.dir/game.cpp.obj: game.cpp
@@ -51,6 +52,7 @@ CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj: player.h
 
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: alphaplayer.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: bet.h
+CMakeFiles/BlockheadPoker.dir/main.cpp.obj: betaplayer.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: bethistory.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: card.h
 CMakeFiles/BlockheadPoker.dir/main.cpp.obj: game.h

@@ -30,18 +30,17 @@
 using namespace std;
 
 int AlphaPlayer::getBet(Hand opponent, BetHistory bh,
-                   int bet2player, bool canRaise, int pot) {
+                   int bet2player, bool canRaise, int pot, int report) {
 
     int betAmt;
     while (true) {
         srand(time(NULL));
 
+        if (report) cout << "Alpha Player has bet." << endl;
         if (canRaise) {
             betAmt = rand() % (bet2player + 10); // Alpha will always raise if possible
-            cout << "Alpha Player has bet." << endl;
             return betAmt; // Player raises an acceptable amount
         } else {
-            cout << "Alpha Player has bet." << endl;
             return bet2player; // Check or Call
         }
     }

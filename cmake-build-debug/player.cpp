@@ -41,7 +41,7 @@ Player::Player(int id, int chips) {
 }
 
 int Player::getBet(Hand opponent, BetHistory bh,
-        int bet2player, bool canRaise, int pot) {
+        int bet2player, bool canRaise, int pot, int report) {
     return 0; // This is overridden by child classes
 }
 

@@ -38,7 +38,25 @@ int main() {
             Game game;
             int chips0, chips1;
 
-            if (game.playGame(ALPHA, ALPHA, chips0, chips1, true) == false) {
+            if (game.playGame(ALPHA, ALPHA, chips0, chips1, true, false) == false) {
+                cout << "Thank you for playing!" << endl;
+            } else {
+                cerr << "Error: playGame returned true." << endl;
+            }
+        } else if (command == "TEST2" || command =="test2") {
+            Game game;
+            int chips0, chips1;
+
+            if (game.playGame(ALPHA, BETA, chips0, chips1, true, false) == false) {
+                cout << "Thank you for playing!" << endl;
+            } else {
+                cerr << "Error: playGame returned true." << endl;
+            }
+        } else if (command == "MONTE" || command =="monte") {
+            Game game;
+            int chips0, chips1;
+
+            if (game.playGame(ALPHA, BETA, chips0, chips1, false, true) == false) {
                 cout << "Thank you for playing!" << endl;
             } else {
                 cerr << "Error: playGame returned true." << endl;
@@ -60,6 +78,8 @@ void printComms() {
     cout << "HELP - Prints this page." << endl;
     cout << "PLAY - Starts a game." << endl;
     cout << "TEST1 - Runs test between two Alpha players with console output." << endl;
+    cout << "TEST2 - Runs test between Alpha (P1) and Beta (P2) players with console output." << endl;
+    cout << "MONTE - Runs 100 tests between Alpha (P1) and Beta (P2) players with no output." << endl;
     cout << "QUIT - Ends the program.\n" << endl;
 }
 
@@ -114,7 +134,7 @@ void play() {
     Game game;
     int chips0, chips1;
 
-    if (game.playGame(playerOne, playerTwo, chips0, chips1, outputBool) == false) {
+    if (game.playGame(playerOne, playerTwo, chips0, chips1, outputBool, false) == false) {
         cout << "Thank you for playing!" << endl;
         return;
     } else {
