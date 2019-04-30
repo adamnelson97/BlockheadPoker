@@ -8,22 +8,6 @@
 
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
 
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.cpp
-player.h
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
-betaplayer.h
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h
-iostream
--
-ctime
--
-cstdlib
--
-
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h
-player.h
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
-
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
 bet.h
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
@@ -39,6 +23,20 @@ vector
 -
 card.h
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.h
+
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.cpp
+player.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
+humanplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
+iostream
+-
+string
+-
+
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
+player.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 bethistory.h

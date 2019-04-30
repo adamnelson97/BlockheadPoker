@@ -40,13 +40,13 @@ int HumanPlayer::getBet(Hand opponent, BetHistory bh,
     for (int i = 0; i < opponent.getCount(); i++) {
         cout << opponent.getCard(i).getName() << endl;
     }
-    cout << "Value: " << opponent.evaluate() << endl;
+    cout << "-----------------\nValue: " << opponent.evaluate() << endl;
 
     cout << "\nYour Hand:" << endl;
     for (int i = 0; i < playerHand.getCount(); i++) {
         cout << playerHand.getCard(i).getName() << endl;
     }
-    cout << "Value: " << playerHand.evaluate() << endl;
+    cout << "-----------------\nValue: " << playerHand.evaluate() << endl;
 
     cout << "\nPot: " << pot << endl;
 

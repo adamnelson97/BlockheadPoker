@@ -29,6 +29,8 @@
 #include "bethistory.h"
 #include "humanplayer.h"
 #include "alphaplayer.h"
+#include "betaplayer.h"
+
 using namespace std;
 
 
@@ -50,8 +52,13 @@ private:
     void popDeck();
     bool runHH(HumanPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
     bool runHA(HumanPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
-    bool runAA(AlphaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
+    bool runHB(HumanPlayer playerOne, BetaPlayer playerTwo, bool reportFlag);
     bool runAH(AlphaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
+    bool runAA(AlphaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
+    bool runAB(AlphaPlayer playerOne, BetaPlayer playerTwo, bool reportFlag);
+    bool runBH(BetaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag);
+    bool runBA(BetaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag);
+    bool runBB(BetaPlayer playerOne, BetaPlayer playerTwo, bool reportFlag);
 
     int thePot; // Tracks the total monies in the betting pool
     BetHistory betHistory;

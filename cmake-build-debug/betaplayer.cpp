@@ -34,13 +34,28 @@ int BetaPlayer::getBet(Hand opponent, BetHistory bh,
     while (true) {
         srand(time(NULL));
 
-        if (canRaise) {
-            betAmt = rand() % (bet2player + 10); // Alpha will always raise if possible
-            cout << "Alpha Player has bet." << endl;
-            return betAmt; // Player raises an acceptable amount
+        /*
+         * The Beta AI is aggresive, but cautious. It adheres to the following logic:
+         * 1) If the bet2player == 0:
+         *   a) If the Beta's hand is worth less than their opponents hand they check
+         *   b) If their hand is worth more, they make a small bet of 5
+         * 2) If the bet2player > 0:
+         *   a) If the Beta's hand is worth less than their opponents hand the fold
+         *   b) If their hand is worth more, they raise by 7. If they cannot raise, they call
+         *   c) If their hand is worth the same, they call
+         *
+         * The Beta will always bet if they have the advantage, but always fold if
+         * they are at a disadvantage. The logic is to cut your losses early and
+         * don't dig bigger holes.
+         */
+
+        if (bet2player == 0) {
+            if (playerHand.evaluate() < opponent.evaluate()) return 0; // Check
+            else return 5; // Raise
         } else {
-            cout << "Alpha Player has bet." << endl;
-            return bet2player; // Check or Call
+            if (playerHand.evaluate() < opponent.evaluate()) return 0; // Fold
+            else if (playerHand.evaluate() > opponent.evaluate()) return bet2player + 7; // Raise
+            else return bet2player; // Call
         }
     }
 }
