@@ -94,6 +94,12 @@
 		<Unit filename="C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h">
 			<Option target="BlockheadPoker"/>
 		</Unit>
+		<Unit filename="C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.cpp">
+			<Option target="BlockheadPoker"/>
+		</Unit>
+		<Unit filename="C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h">
+			<Option target="BlockheadPoker"/>
+		</Unit>
 		<Unit filename="C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.cpp">
 			<Option target="BlockheadPoker"/>
 		</Unit>

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/BlockheadPoker.dir/player.cpp.obj"
   "CMakeFiles/BlockheadPoker.dir/humanplayer.cpp.obj"
   "CMakeFiles/BlockheadPoker.dir/alphaplayer.cpp.obj"
+  "CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj"
   "BlockheadPoker.pdb"
   "BlockheadPoker.exe"
   "BlockheadPoker.exe.manifest"

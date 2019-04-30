@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/alphaplayer.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/alphaplayer.cpp.obj"
   "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/bet.cpp.obj"
+  "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj"
   "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/bethistory.cpp.obj"
   "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/card.cpp.obj"
   "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/game.cpp" "C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/CMakeFiles/BlockheadPoker.dir/game.cpp.obj"

@@ -176,6 +176,33 @@ bet.cpp.s:
 	$(MAKE) -f CMakeFiles\BlockheadPoker.dir\build.make CMakeFiles/BlockheadPoker.dir/bet.cpp.s
 .PHONY : bet.cpp.s
 
+betaplayer.obj: betaplayer.cpp.obj
+
+.PHONY : betaplayer.obj
+
+# target to build an object file
+betaplayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\BlockheadPoker.dir\build.make CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj
+.PHONY : betaplayer.cpp.obj
+
+betaplayer.i: betaplayer.cpp.i
+
+.PHONY : betaplayer.i
+
+# target to preprocess a source file
+betaplayer.cpp.i:
+	$(MAKE) -f CMakeFiles\BlockheadPoker.dir\build.make CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.i
+.PHONY : betaplayer.cpp.i
+
+betaplayer.s: betaplayer.cpp.s
+
+.PHONY : betaplayer.s
+
+# target to generate assembly for a file
+betaplayer.cpp.s:
+	$(MAKE) -f CMakeFiles\BlockheadPoker.dir\build.make CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.s
+.PHONY : betaplayer.cpp.s
+
 bethistory.obj: bethistory.cpp.obj
 
 .PHONY : bethistory.obj
@@ -380,6 +407,9 @@ help:
 	@echo ... bet.obj
 	@echo ... bet.i
 	@echo ... bet.s
+	@echo ... betaplayer.obj
+	@echo ... betaplayer.i
+	@echo ... betaplayer.s
 	@echo ... bethistory.obj
 	@echo ... bethistory.i
 	@echo ... bethistory.s
