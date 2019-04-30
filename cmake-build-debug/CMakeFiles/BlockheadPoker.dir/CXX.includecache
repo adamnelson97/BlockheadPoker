@@ -6,19 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
-
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.cpp
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/alphaplayer.h
 player.h
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
-betaplayer.h
-C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h
-iostream
--
-ctime
--
-cstdlib
--
+
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bet.h
 
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h
 player.h
@@ -34,11 +26,51 @@ C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.h
 string
 -
 
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/game.cpp
+iostream
+-
+game.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/game.h
+player.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
+humanplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
+alphaplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/alphaplayer.h
+algorithm
+-
+cstdlib
+-
+vector
+-
+bethistory.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
+ctime
+-
+
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/game.h
+vector
+-
+card.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.h
+bethistory.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/bethistory.h
+humanplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
+alphaplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/alphaplayer.h
+betaplayer.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/betaplayer.h
+
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/hand.h
 vector
 -
 card.h
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/card.h
+
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/humanplayer.h
+player.h
+C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 
 C:/Users/adamn/CLionProjects/BlockheadPoker/cmake-build-debug/player.h
 bethistory.h

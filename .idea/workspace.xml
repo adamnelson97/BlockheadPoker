@@ -11,7 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1a5a364-0800-4288-860b-0bf77742c7f7" name="Default Changelist" comment="" />
+    <list default="true" id="e1a5a364-0800-4288-860b-0bf77742c7f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,19 +29,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/game.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="421">
-                  <caret line="2242" column="43" selection-start-line="2242" selection-start-column="43" selection-end-line="2242" selection-end-column="43" />
+                <state relative-caret-position="260">
+                  <caret line="2061" column="67" selection-start-line="2061" selection-start-column="67" selection-end-line="2061" selection-end-column="67" />
                   <folding>
                     <element signature="e#835#854#0" expanded="true" />
-                    <element signature="e#5447#12873#0" />
-                    <element signature="e#12874#20313#0" />
-                    <element signature="e#20314#27752#0" />
-                    <element signature="e#27753#35192#0" />
-                    <element signature="e#35193#42632#0" />
-                    <element signature="e#42633#50071#0" />
-                    <element signature="e#50072#57510#0" />
-                    <element signature="e#57511#64949#0" />
-                    <element signature="e#64950#72387#0" />
+                    <element signature="e#5447#12879#0" />
                   </folding>
                 </state>
               </provider>
@@ -48,7 +42,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/humanplayer.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="217">
+                <state relative-caret-position="493">
                   <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
                   <folding>
                     <element signature="e#661#680#0" expanded="true" />
@@ -69,7 +63,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/player.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="166">
+                <state relative-caret-position="731">
                   <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
                   <folding>
                     <element signature="e#900#923#0" expanded="true" />
@@ -81,7 +75,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/main.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
+                <state relative-caret-position="1377">
                   <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
                   <folding>
                     <element signature="e#309#328#0" expanded="true" />
@@ -97,8 +91,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/alphaplayer.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="455">
-                  <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+                <state relative-caret-position="680">
+                  <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
                   <folding>
                     <element signature="e#765#784#0" expanded="true" />
                   </folding>
@@ -109,8 +103,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+                <state relative-caret-position="370">
+                  <caret line="53" column="64" lean-forward="true" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
                   <folding>
                     <element signature="e#633#652#0" expanded="true" />
                   </folding>
@@ -130,8 +124,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -148,7 +142,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/player.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="353">
+                <state relative-caret-position="629">
                   <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
                   <folding>
                     <element signature="e#907#930#0" expanded="true" />
@@ -175,6 +169,10 @@
       <find>playGame</find>
       <find>playerTwo.getBet(playerTwo.getHand(), betHistory, betToPlayer, canRaise, thePot);</find>
       <find>getHand(), betHistory, betToPlayer, canRaise, thePot</find>
+      <find>&quot;-----------------\nBidding Round</find>
+      <find>cout &lt;&lt; &quot;Player Two's Hand (&quot; &lt;&lt; p2Score</find>
+      <find>&quot;-----------------\nBetting Round</find>
+      <find>completedRounds + 1 &lt;&lt; &quot;\n-----------------\n&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>player2Type</replace>
@@ -185,6 +183,10 @@
       <replace>betAmt =</replace>
       <replace>playerTwo.getBet(playerOne.getHand(), betHistory, betToPlayer, canRaise, thePot);</replace>
       <replace>getHand(), betHistory, betToPlayer, canRaise, thePot, reportFlag</replace>
+      <replace>&quot;\n-----------------\nBidding Round</replace>
+      <replace>cout &lt;&lt; &quot;\nPlayer Two's Hand (&quot; &lt;&lt; p2Score</replace>
+      <replace>&quot;\n-----------------\nBetting Round</replace>
+      <replace>completedRounds + 1 &lt;&lt; &quot;\n-----------------&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -215,8 +217,8 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/alphaplayer.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/humanplayer.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/player.cpp" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/game.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/betaplayer.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/game.cpp" />
       </list>
     </option>
   </component>
@@ -308,12 +310,13 @@
       <workItem from="1555444161247" duration="5830000" />
       <workItem from="1555452487771" duration="10453000" />
       <workItem from="1555466110505" duration="11816000" />
-      <workItem from="1556646796161" duration="6522000" />
+      <workItem from="1556646796161" duration="6747000" />
+      <workItem from="1556654347341" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38952000" />
+    <option name="totallyTimeSpent" value="41247000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/bethistory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/bethistory.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -432,16 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
-          <folding>
-            <element signature="e#309#328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/game.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -449,6 +435,67 @@
           <folding>
             <element signature="e#842#859#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/humanplayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+          <folding>
+            <element signature="e#661#680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/bethistory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+          <folding>
+            <element signature="e#900#923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
+          <folding>
+            <element signature="e#309#328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/alphaplayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding>
+            <element signature="e#765#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/alphaplayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -461,7 +508,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/player.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
+        <state relative-caret-position="629">
           <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
           <folding>
             <element signature="e#907#930#0" expanded="true" />
@@ -469,75 +516,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/humanplayer.cpp">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+        <state relative-caret-position="370">
+          <caret line="53" column="64" lean-forward="true" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
           <folding>
-            <element signature="e#661#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
-          <folding>
-            <element signature="e#900#923#0" expanded="true" />
+            <element signature="e#633#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/game.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="2242" column="43" selection-start-line="2242" selection-start-column="43" selection-end-line="2242" selection-end-column="43" />
+        <state relative-caret-position="260">
+          <caret line="2061" column="67" selection-start-line="2061" selection-start-column="67" selection-end-line="2061" selection-end-column="67" />
           <folding>
             <element signature="e#835#854#0" expanded="true" />
-            <element signature="e#5447#12873#0" />
-            <element signature="e#12874#20313#0" />
-            <element signature="e#20314#27752#0" />
-            <element signature="e#27753#35192#0" />
-            <element signature="e#35193#42632#0" />
-            <element signature="e#42633#50071#0" />
-            <element signature="e#50072#57510#0" />
-            <element signature="e#57511#64949#0" />
-            <element signature="e#64950#72387#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/alphaplayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/alphaplayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-          <folding>
-            <element signature="e#765#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/betaplayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-          <folding>
-            <element signature="e#633#652#0" expanded="true" />
+            <element signature="e#5447#12879#0" />
           </folding>
         </state>
       </provider>
