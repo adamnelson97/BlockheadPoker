@@ -26,7 +26,7 @@ using namespace std;
 
 class BetaPlayer : public Player {
 public:
-    AlphaPlayer(int id, int chips)
+    BetaPlayer(int id, int chips)
             : Player(id, chips) {}
 
     int getBet(Hand opponent, BetHistory bh,

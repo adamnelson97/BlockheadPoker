@@ -375,8 +375,10 @@ bool Game::runHH(HumanPlayer playerOne, HumanPlayer playerTwo, bool reportFlag) 
 
     if (reportFlag && playerOne.getChips() > playerTwo.getChips()) {
         cout << "Player One wins the game!" << endl;
-    } else {
+    } else if (reportFlag && playerOne.getChips() < playerTwo.getChips()) {
         cout << "Player Two wins the game!" << endl;
+    } else {
+        cout << "The game is a tie!" << endl;
     }
     return false;
 }
@@ -577,8 +579,10 @@ bool Game::runHA(HumanPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag) 
 
     if (reportFlag && playerOne.getChips() > playerTwo.getChips()) {
         cout << "Player One wins the game!" << endl;
-    } else {
+    } else if (reportFlag && playerOne.getChips() < playerTwo.getChips()) {
         cout << "Player Two wins the game!" << endl;
+    } else {
+        cout << "The game is a tie!" << endl;
     }
     return false;
 }
@@ -779,8 +783,10 @@ bool Game::runAA(AlphaPlayer playerOne, AlphaPlayer playerTwo, bool reportFlag) 
 
     if (reportFlag && playerOne.getChips() > playerTwo.getChips()) {
         cout << "Player One wins the game!" << endl;
-    } else {
+    } else if (reportFlag && playerOne.getChips() < playerTwo.getChips()) {
         cout << "Player Two wins the game!" << endl;
+    } else {
+        cout << "The game is a tie!" << endl;
     }
     return false;
 }
@@ -981,8 +987,10 @@ bool Game::runAH(AlphaPlayer playerOne, HumanPlayer playerTwo, bool reportFlag) 
 
     if (reportFlag && playerOne.getChips() > playerTwo.getChips()) {
         cout << "Player One wins the game!" << endl;
-    } else {
+    } else if (reportFlag && playerOne.getChips() < playerTwo.getChips()) {
         cout << "Player Two wins the game!" << endl;
+    } else {
+        cout << "The game is a tie!" << endl;
     }
     return false;
 }

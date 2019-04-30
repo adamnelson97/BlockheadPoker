@@ -12,6 +12,14 @@ CMakeFiles/BlockheadPoker.dir/alphaplayer.cpp.obj: player.h
 CMakeFiles/BlockheadPoker.dir/bet.cpp.obj: bet.cpp
 CMakeFiles/BlockheadPoker.dir/bet.cpp.obj: bet.h
 
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: bet.h
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: betaplayer.cpp
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: betaplayer.h
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: bethistory.h
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: card.h
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: hand.h
+CMakeFiles/BlockheadPoker.dir/betaplayer.cpp.obj: player.h
+
 CMakeFiles/BlockheadPoker.dir/bethistory.cpp.obj: bet.h
 CMakeFiles/BlockheadPoker.dir/bethistory.cpp.obj: bethistory.cpp
 CMakeFiles/BlockheadPoker.dir/bethistory.cpp.obj: bethistory.h
